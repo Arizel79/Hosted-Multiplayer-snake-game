@@ -103,7 +103,7 @@ function connectToServer() {
     try {
         gameState.state = "connecting";
         showAlert("Connecting", "Server: " + gameState.serverAddress, "Wait...");
-        gameState.socket = new WebSocket("ws://" + gameState.serverAddress);
+        gameState.socket = new WebSocket("wss://" + gameState.serverAddress);
         gameState.state = "game"
 
         gameState.socket.onopen = () => {
